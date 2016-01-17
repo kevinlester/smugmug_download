@@ -1,0 +1,8 @@
+{
+    "app_key":           "<the application API key returned from registering your app with smugmug>",
+    "app_key_secret":    "<the application API secret key>",
+    "access_key":        "<the oauth app token received from running the smugmug oauth console script>",
+    "access_key_secret": "<the oauth app secret token received from running the smugmug oauth console script>",
+    "output_dir":        "<the directory to which the albums should be downloaded>",
+    "smugmug_user":      "<the username of the smugmug user>"
+}
