@@ -22,7 +22,7 @@ def dl_process_init(dl_queue, sleep_queue, master_albums_list, api_key_params, o
 def sleep_process_init(dl_queue, sleep_queue, api_key_params, oauth_data):
     while 1:
         sleepRequest = sleep_queue.get()
-        queueForSleeping(sleepRequest['node'], sleepRequest['path'], sleepRequest['queueTimeMillis'], dl_queue, api_key_params, oauth_data)
+        queueForSleeping(sleepRequest['node'], sleepRequest['path'], sleepRequest['queueTimeMillis'], dl_queue)
 
 
 def queueForSleeping(node, path, queueTimeMillis, dl_queue):
@@ -78,7 +78,7 @@ def initiateDownload(node, path, sleep_queue, master_albums_list, api_key_params
         master_albums_list.remove(path)
     else:
         # We don't have a download URL yet.  request one.
-        requestNewDownloadUrl(downloadUrl, node, path, master_albums_list)
+        requestNewDownloadUrl(downloadUrl, node, path, master_albums_list, oauth_data)
     
     
 def getNodeURI(userAcct, api_key_params, oauth_data):
